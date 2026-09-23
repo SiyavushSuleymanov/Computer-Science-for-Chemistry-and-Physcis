@@ -6,7 +6,7 @@ Setup
 
 Create the environment for a given lab:
 
-conda env create -f PW<n>/Lab\ <X>/environment.yml
+conda env create -f PW1<n>/Lab\ <X>/environment.yml
 conda activate cspc
 
 PW1 - Lab A: Reproducible Foundations
