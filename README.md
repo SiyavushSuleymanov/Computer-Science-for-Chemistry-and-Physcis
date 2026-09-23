@@ -34,3 +34,20 @@ All three tests passed successfully, including the negative-rate error test and 
 The NumPy implementation was much faster than the pure-Python loop because it uses vectorized operations instead of processing atoms one by one in Python.
 
 In this lab, I also practised Conda environments, Git branching and merging, pytest, and performance measurement with time.perf_counter().
+
+
+## PW1 - Lab B: Data, Plotting, and Automation
+
+**What I did:**
+- I read the observed decay data from `decay_observed.csv` and compared it with the analytical decay law.
+- I created a figure with the observed data on one side and the analytical curve on the other side.
+
+**Result:**
+- The observed data was close to the analytical decay curve, so the simulation and the theoretical result matched quite well.
+
+**Snakemake:**
+- I used Snakemake to automate the creation of `figure.png`.
+- If the output file is missing or the input changes, Snakemake runs `plot.py` again and rebuilds the figure.
+
+**Conclusion:**
+- In this lab I learned how to read data with NumPy, plot results with Matplotlib, and automate a simple workflow using Snakemake.
