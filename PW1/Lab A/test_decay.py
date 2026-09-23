@@ -34,13 +34,3 @@ def test_average_decay():
     expected = N0 * np.exp(-lam)
 
     assert average == pytest.approx(expected, rel=0.03)
-
-# TODO 1: test_rejects_negative_rate ++++
-#   Check that calling simulate(...) with a negative lam raises a ValueError.
-#   Which pytest tool checks that an error is raised?
-
-
-# TODO 2: test_matches_law ++++
-#   Check that the simulation's AVERAGE over many seeds is close to the
-#   physical law  N0 * exp(-lam * t).
-#   Which pytest tool compares floating-point values with a tolerance?
