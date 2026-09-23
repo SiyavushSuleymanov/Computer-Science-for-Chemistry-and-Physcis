@@ -1,9 +1,6 @@
 __pycache__/
 *.pyc
-<<<<<<< HEAD
-PW1/Lab B/figure.png
-PW1/Lab B/.snakemake/
-=======
-PW/Lab B/figure.png
-PW/Lab B/.snakemake/
->>>>>>> 1dccf90 (Updated Folder name)
+
+
+figure.png
+.snakemake/
