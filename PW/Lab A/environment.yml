@@ -5,5 +5,5 @@ dependencies:
 - python=3.11
 - numpy
 - pytest
--matplotlib
--snakemake
+- matplotlib
+- snakemake
