@@ -76,3 +76,33 @@ In this lab, I also practised Conda environments, Git branching and merging, pyt
 **Conclusion:**
 - This lab showed that differentiation can strongly amplify measurement noise, especially when it is applied more than once.
 - Integration has the opposite effect: the positive and negative noise partly cancels while values are accumulated, so the recovered position can still be close to the original data.
+
+
+## PW2 - Lab B: Optimization in Chemistry
+
+**What I did:**
+- I compared three optimization methods: Gradient Descent, Newton's method, and SLSQP.
+- I first tested them on a simple convex function, where all three methods found the same minimum at `x = 3`.
+- Then I used a harder function with several stationary points. This showed that the result can depend on both the starting point and the optimization method.
+- With Gradient Descent using `lr = 0.1`, starting from `x = 0` and `x = 2` both converged to about `x = -1.30`.
+- Newton's method starting from `x = 0` converged to a local maximum near `x = 0.17`, while starting from `x = 2` converged to a local minimum near `x = 1.13`.
+- SLSQP converged to the lower minimum near `x = -1.30`.
+
+**Reaction rate fitting:**
+- I used the first-order reaction model `C(t) = C0 * exp(-k*t)` to fit noisy concentration data.
+- I created a total squared error function and used SLSQP to find the value of `k` that minimized this error.
+- The fitted rate constant was about `k = 0.25`.
+- I plotted the measured concentration data together with the fitted curve in `kinetics.png`.
+
+**Chemical equilibrium:**
+- I studied the reaction `H2 + I2 <=> 2HI`, starting with `1 mol` of `H2` and `1 mol` of `I2`.
+- I represented the reaction using the extent `x`, where `H2 = 1-x`, `I2 = 1-x`, and `HI = 2x`.
+- I solved the equilibrium condition in two ways: Newton root-finding and SLSQP by minimizing the squared imbalance.
+- Both methods gave approximately `x = 0.66`.
+- This gives equilibrium amounts of about `0.34 mol H2`, `0.34 mol I2`, and `1.32-1.33 mol HI`.
+- I plotted how the amounts change with reaction extent and marked the equilibrium point in `equilibrium.png`.
+
+**Conclusion:**
+- This lab showed that optimization algorithms can behave differently on functions with several stationary points.
+- I learned that Newton's method finds stationary points, so it can converge to either a minimum or a maximum.
+- I also learned how optimization can be applied to real chemistry problems, such as fitting a reaction rate constant and finding chemical equilibrium.
