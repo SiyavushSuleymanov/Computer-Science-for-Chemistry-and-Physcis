@@ -66,8 +66,7 @@ gd_2 = gradient_descent(2.0)
 
 print("Gradient descent from 0:", gd_0, g(gd_0))
 print("Gradient descent from 2:", gd_2, g(gd_2))
-#if the results are the same, it means that function has 2 local minimum
-
+## With lr = 0.1, both starting points converge to the same minimum
 
 #Newton's method for complex equation
 starting_point1 = 0
