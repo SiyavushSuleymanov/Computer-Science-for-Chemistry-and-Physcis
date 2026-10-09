@@ -106,3 +106,57 @@ In this lab, I also practised Conda environments, Git branching and merging, pyt
 - This lab showed that optimization algorithms can behave differently on functions with several stationary points.
 - I learned that Newton's method finds stationary points, so it can converge to either a minimum or a maximum.
 - I also learned how optimization can be applied to real chemistry problems, such as fitting a reaction rate constant and finding chemical equilibrium.
+
+## PW3 - Data, Distributions, Testing, and Causation
+
+**What I did:**
+- I loaded and analysed the `heart.csv` and `chemicals_cancer.csv` datasets using pandas.
+- I studied the distributions of the continuous heart-disease variables and checked whether they were approximately normally distributed.
+- I compared maximum heart rate between healthy and heart-disease patients.
+- I investigated the relationship between age and maximum heart rate.
+- I also analysed the chemical dataset to study the difference between correlation and causation.
+
+**Distributions and normality:**
+- I analysed `age`, `chol`, `trestbps`, and `thalach` using histograms, Q-Q plots, and the Shapiro-Wilk test.
+- For all four variables, the Shapiro-Wilk test gave `p < 0.05`, so I treated them as not normally distributed.
+- The histograms and Q-Q plots were also used to visually check the shapes of the distributions.
+
+**Heart-rate comparison:**
+- I separated `thalach` into healthy patients (`target = 0`) and heart-disease patients (`target = 1`).
+- Since the data were not normally distributed, I used the Mann-Whitney U test to compare the groups.
+- The mean maximum heart rate was about `158.38` for healthy patients and `139.26` for heart-disease patients.
+- The test gave a very small p-value (`p ≈ 1.86 × 10^-13`), showing a statistically significant difference between the groups.
+- I also calculated the uncertainty of the group means and plotted the means with 95% confidence intervals.
+
+**Age and maximum heart rate:**
+- I used Spearman correlation to investigate the relationship between `age` and `thalach`.
+- The result was approximately `rho = -0.392`.
+- This shows a moderate negative relationship: as age increases, maximum heart rate tends to decrease.
+
+**Chemical exposure analysis:**
+- In the first, naive analysis, I calculated the correlations between each chemical and malignancy.
+- Benzene had a correlation of about `r = 0.385` with malignancy.
+- Cadmium had a much stronger apparent correlation of about `r = 0.880`.
+- From this result alone, cadmium appeared to be the more important chemical.
+
+**Confounding and causation:**
+- I then investigated `pollution_index` as a possible confounding variable.
+- Cadmium was very strongly correlated with pollution index (`r ≈ 0.982`).
+- To control for pollution, I restricted the analysis to patients with similar pollution levels (`40 < pollution_index < 60`).
+- After controlling for pollution, benzene still had a strong association with malignancy (`r ≈ 0.702`), while cadmium's association dropped to about `r ≈ 0.316`.
+- This shows that cadmium initially looked strongly related to malignancy mainly because it was also strongly related to pollution.
+- After accounting for the confounding variable, benzene remained the stronger relationship and is the chemical supported by this dataset as the real driver of malignancy.
+
+**Plots created:**
+- `heart_distributions.png`
+- `heart_qqplots.png`
+- `thalach_groups.png`
+- `age_thalach.png`
+- `chemical_naive.png`
+- `chemical_controlled.png`
+
+**Conclusion:**
+- This practical showed how the choice of a statistical method depends on the characteristics of the data.
+- I learned how to examine distributions, test normality, compare groups, quantify uncertainty, and measure relationships between variables.
+- The chemical dataset also showed an important statistical principle: a strong correlation does not automatically imply causation.
+- A third variable can create a misleading relationship, so possible confounding variables should be investigated before making causal conclusions.
