@@ -10,3 +10,7 @@ dependencies:
 - snakemake
 - scipy
 - pandas
+- scikit-learn
+- pip
+- pip:
+  - ucimlrepo
