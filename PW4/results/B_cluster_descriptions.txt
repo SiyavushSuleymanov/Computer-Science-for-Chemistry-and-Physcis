@@ -1,0 +1,3 @@
+Cluster 0: flavanoids=2.05 (above overall mean), od280/od315_of_diluted_wines=2.8 (above overall mean), proline=510 (below overall mean).
+Cluster 1: flavanoids=0.819 (below overall mean), od280/od315_of_diluted_wines=1.7 (below overall mean), proline=619 (below overall mean).
+Cluster 2: flavanoids=3 (above overall mean), od280/od315_of_diluted_wines=3.16 (above overall mean), proline=1.1e+03 (above overall mean).

@@ -1,0 +1,22 @@
+|--- age <= 42.00
+|   |--- cement <= 257.70
+|   |   |--- water <= 156.20
+|   |   |   |--- truncated branch of depth 6
+|   |   |--- water >  156.20
+|   |   |   |--- truncated branch of depth 6
+|   |--- cement >  257.70
+|   |   |--- superplastic <= 0.95
+|   |   |   |--- truncated branch of depth 6
+|   |   |--- superplastic >  0.95
+|   |   |   |--- truncated branch of depth 6
+|--- age >  42.00
+|   |--- superplastic <= 6.45
+|   |   |--- fine_agg <= 749.55
+|   |   |   |--- truncated branch of depth 5
+|   |   |--- fine_agg >  749.55
+|   |   |   |--- truncated branch of depth 6
+|   |--- superplastic >  6.45
+|   |   |--- cement <= 203.35
+|   |   |   |--- truncated branch of depth 3
+|   |   |--- cement >  203.35
+|   |   |   |--- truncated branch of depth 4

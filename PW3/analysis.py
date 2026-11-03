@@ -6,7 +6,7 @@ from scipy import stats
 
 df = pd.read_csv("heart.csv")
 
-print("\n========== HEART DATASET ==========\n")
+
 
 print("Shape:")
 print(df.shape)
@@ -54,8 +54,6 @@ plt.close()
 
 
 
-print("\n========== NORMALITY ==========\n")
-
 normality = {}
 
 for column in continuous_columns:
@@ -99,7 +97,6 @@ plt.savefig("heart_qqplots.png")
 plt.close()
 
 
-print("\n========== THALACH GROUP COMPARISON ==========\n")
 
 healthy = df[df["target"] == 0]["thalach"].dropna()
 disease = df[df["target"] == 1]["thalach"].dropna()
@@ -196,8 +193,6 @@ plt.title("Maximum Heart Rate with 95% Confidence Intervals")
 plt.tight_layout()
 plt.savefig("thalach_groups.png")
 
-print("\n========== AGE vs THALACH ==========\n")
-
 # Both variables are non-normal in this dataset,
 # so use Spearman correlation
 
@@ -239,7 +234,6 @@ plt.close()
 
 chem = pd.read_csv("chemicals_cancer.csv")
 
-print("\n========== CHEMICAL DATASET ==========\n")
 
 print("Shape:")
 print(chem.shape)
@@ -251,7 +245,6 @@ print("\nSummary:")
 print(chem.describe())
 
 
-print("\n========== NAIVE CHEMICAL ANALYSIS ==========\n")
 
 
 benzene_r, benzene_p = stats.pearsonr(
@@ -310,7 +303,6 @@ plt.savefig("chemical_naive.png")
 plt.close()
 
 
-print("\n========== CONFOUNDING ANALYSIS ==========\n")
 
 
 # First examine pollution index relationships
@@ -420,8 +412,6 @@ plt.savefig("chemical_controlled.png")
 plt.close()
 
 
-print("\n========== BONUS: CATEGORY BALANCE ==========\n")
-
 proportions = df["target"].value_counts(normalize=True)
 
 print("Target proportions:")
@@ -441,5 +431,3 @@ elif entropy > 0.6:
 else:
     print("The target categories are strongly imbalanced.")
 
-
-print("\n========== PW3 COMPLETE ==========\n")

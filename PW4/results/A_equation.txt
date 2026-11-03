@@ -1,0 +1,3 @@
+strength (MPa) = -23.389347 +0.11666665*cement +0.098066391*slag +0.084584678*ash -0.13139102*water +0.33147986*superplastic +0.015522047*coarse_agg +0.020649311*fine_agg +0.11064223*age
+Ingredient inputs: kg/m³; age: days.
+Ingredient coefficients: MPa/(kg/m³); age coefficient: MPa/day.

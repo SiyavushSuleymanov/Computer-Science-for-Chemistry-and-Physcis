@@ -1,0 +1,8 @@
+Removed duplicates: 25
+K: 3
+Max depth: 8
+Root question: age <= 42
+Selection maximises training-only 5-fold CV accuracy
+among K>=3 (non-binary probabilities) and bounded-depth trees (readability).
+Threshold 0.7 is an illustrative cautious choice, not a safety certification.
+Interpret the printed tables and plots in your README.
